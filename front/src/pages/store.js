@@ -99,7 +99,7 @@ const Product = ({ data }) => {
         </section>
 
       </Layout>
-      <section hidden>
+      <section>
         {products.map((product) => (
           <div
             key={product.node.id}
