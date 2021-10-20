@@ -89,7 +89,11 @@ const Product = ({ data }) => {
         <SortSelect sortProduct={sortProduct} />
         <section style={styles.store}>
           {products.map((product) => (
-            <ProductCard key={product.node.id} {...product.node} data-item-id={product.node.id}
+            <ProductCard
+              key={product.node.id}
+              {...product.node}
+              className="snipcart-add-item"
+              data-item-id={product.node.id}
               data-item-price={product.node.price}
               data-item-name={product.node.title}
               data-item-url="/product/"
