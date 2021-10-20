@@ -71,6 +71,7 @@ const Product = ({ data }) => {
     }
   }
 
+
   if (!products) return null
 
   // Return =>
@@ -92,17 +93,26 @@ const Product = ({ data }) => {
             <ProductCard
               key={product.node.id}
               {...product.node}
-              className="snipcart-add-item"
-              data-item-id={product.node.id}
-              data-item-price={product.node.price}
-              data-item-name={product.node.title}
-              data-item-url="/product/"
             />
 
           ))}
         </section>
 
       </Layout>
+      <section hidden>
+        {products.map((product) => (
+          <div
+            key={product.node.id}
+            //className="snipcart-add-item"
+            data-item-id={product.node.id}
+            data-item-price={product.node.price}
+            // data-item-url={`/product/${product.slug}`}
+            data-item-name={product.node.title}
+          />
+
+
+        ))}
+      </section>
     </div>
 
 
