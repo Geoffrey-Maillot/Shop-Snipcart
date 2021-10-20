@@ -103,7 +103,7 @@ const Product = ({ data }) => {
         {products.map((product) => (
           <div
             key={product.node.id}
-            //className="snipcart-add-item"
+            className="snipcart-add-item"
             data-item-id={product.node.id}
             data-item-price={product.node.price}
             data-item-url="/product"
