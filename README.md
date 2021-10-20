@@ -80,7 +80,11 @@ Install dependencies
 Start the server
 
 ```bash
-  strapi develop
+  npm run develop
+  
+  # or
+  
+  yarn develop
   
 ```
 
