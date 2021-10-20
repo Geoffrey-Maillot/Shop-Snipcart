@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from 'gatsby'
 
+
 // Import Components =>
 import Layout from "../components/Layout"
 import ProductCard from "../components/productCard"
@@ -88,7 +89,10 @@ const Product = ({ data }) => {
         <SortSelect sortProduct={sortProduct} />
         <section style={styles.store}>
           {products.map((product) => (
-            <ProductCard key={product.node.id} {...product.node} />
+            <ProductCard key={product.node.id} {...product.node}
+              data-item-id={product.id}
+              data-item-price={product.price}
+              data-item-name={product.title} />
           ))}
         </section>
 
