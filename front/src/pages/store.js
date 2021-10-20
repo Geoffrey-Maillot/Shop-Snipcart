@@ -106,7 +106,7 @@ const Product = ({ data }) => {
             //className="snipcart-add-item"
             data-item-id={product.node.id}
             data-item-price={product.node.price}
-            // data-item-url={`/product/${product.slug}`}
+            data-item-url="/product"
             data-item-name={product.node.title}
           />
 
