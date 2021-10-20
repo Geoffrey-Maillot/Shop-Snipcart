@@ -36,12 +36,17 @@ const styles = {
   },
 
   button: {
-    width: '75%',
+    width: '100%',
     padding: '20px',
     border: 'none',
     backgroundColor: '#875a83',
     color: '#fff',
+  },
+
+  btnLink: {
+    width: '65%',
     marginLeft: '10px'
+
   }
 }
 
@@ -74,8 +79,11 @@ const ProductCard = ({ title, price, image, slug, description, }) => {
 
         <div style={styles.priceContainer}>
           <div style={styles.price}>{price}€</div>
-          <button style={styles.button}>Ajouter au panier</button>
+          <Link style={styles.btnLink} to={`/product/${slug}`} >
+            <button style={styles.button}>En savoir plus</button>
+          </Link>
         </div>
+
       </div>
 
     </article>
