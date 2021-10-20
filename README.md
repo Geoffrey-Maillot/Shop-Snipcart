@@ -1,76 +1,139 @@
 
-# Shop Snicart
+# Shop Snipcart
 
 Boutique en ligne gérer avec [Snipacrt](https://snipcart.com/fr)
 
-
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
+![image](https://user-images.githubusercontent.com/73821918/138086693-f0935a90-f412-4ce5-8a83-d4b5e98dc7c3.png)
   
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** Gatsby
 
-**Server:** Node, Express
+**Server:** Strapi
 
 **BDD:** PostgreSQL
 
 
 ## Lessons Learned
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
-
+- Gatsby
+- Strapi
+- Snipcart
   
 ## Run Locally
+
+### Client
 
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://https://github.com/Geoffrey-Maillot/Shop-Snipcart
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd Shop_Snipcart/front
 ```
 
 Install dependencies
 
 ```bash
   npm install
+  
+   # or
+   
+   yarn
 ```
 
 Start the server
 
 ```bash
-  npm run develop
+  gatsby develop
+```
+### Server
+
+Clone the project
+
+```bash
+  git clone https://https://github.com/Geoffrey-Maillot/Shop-Snipcart
+```
+
+Go to the project directory
+
+```bash
+  cd Shop_Snipcart/back
+```
+
+Install dependencies
+
+```bash
+  npm install
+  
+  # or
+  
+  yarn
+```
+
+Start the server
+
+```bash
+  strapi develop
+  
 ```
 
   
 ## Deployment
 
+### Client
+
 To deploy this project run
 
 ```bash
-  npm run build
+  gatsby build
+```
+
+### Server
+
+To deploy this project run
+
+```bash
+ strapi build
 ```
 
   
 ## Environment Variables
 
+### Client
+
 To run this project, you will need to add the following environment variables to your .env file
 
-`API_KEY`
+`GATSBY_SNIPCART_APIKEY`
 
-`ANOTHER_API_KEY`
+`URL_STRAPI`
+
+### Server
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`AWS_ACCESS_KEY_ID`
+
+`AWS_ACCESS_SECRET`
+
+'AWS_BUCKET_NAME'
+
+'AWS_REGION'
+
+'DATABASE_URL'
+
+
 
   
 ## Demo
 
-- [Demo](https://www.google.com)
+- [Demo](https://jolly-keller-627d70.netlify.app/)
   
 ## Authors
 
