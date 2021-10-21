@@ -6,6 +6,7 @@ import Layout from "../components/Layout"
 import Header from '../components/Header';
 import Nav from '../components/Nav';
 import Search from "../components/Search";
+import JsonLd from '../components/JsonLd'
 // import Modal from "../components/Modal";
 
 // styles
@@ -21,6 +22,19 @@ const IndexPage = () => {
         <meta charSet="utf-8" />
         <title>Boutique Gatsby-Snipcart</title>
         <meta name="description" content="Boutique test Gatsby / Snipcart" />
+        <JsonLd>
+          {{
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            url: 'http://www.example.com',
+            name: 'Boutique Gatsby-Snipcart',
+            contactPoint: {
+              '@type': 'ContactPoint',
+              telephone: '+33650828740',
+              contactType: 'Patron',
+            },
+          }}
+        </JsonLd>
       </Helmet>
       <Header />
       <Nav />
