@@ -5205,6 +5205,11 @@ gatsby-plugin-image@^1.14.0:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.7.2"
 
+gatsby-plugin-json-pages@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-json-pages/-/gatsby-plugin-json-pages-1.0.0.tgz#079d64d5064a6f94d7377f69b4857c1b81c4cc5e"
+  integrity sha512-A3eKISB3z8r91g68gM8burBiX6bXGcITnPI+htScoVSDWUQ96IWmkdWk8ldu3woviS4NgF94cUF/P9p15SJUXQ==
+
 gatsby-plugin-ngrok-tunneling@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-ngrok-tunneling/-/gatsby-plugin-ngrok-tunneling-1.1.5.tgz#a1a0df7faf08192bbdf615cd509750350f867b12"

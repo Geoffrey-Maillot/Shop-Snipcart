@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "http://localhost:8000/",
     title: "Gatsby test shop",
   },
   plugins: [
@@ -51,7 +51,7 @@ module.exports = {
       resolve: 'gatsby-plugin-snipcart-advanced',
       options: {
         version: "3.0.20",
-        publicApiKey: process.env.GATSBY_SNIPCART_APIKEY,
+        publicApiKey: process.env.GATSBY_SNIPCART_API_KEY,
         defaultLang: "fr",
         currency: "eur",
         openCartOnAdd: false,
@@ -67,8 +67,41 @@ module.exports = {
 
         templatesUrl: "/snipcartTemplate/template.html",
       },
-
-    }
+    },
+    {
+      resolve: "gatsby-plugin-json-pages",
+      options: {
+        pages: [
+          {
+            fileName: "products",
+            query: `
+              query {
+                allStrapiProducts {
+                  nodes {
+                    id
+                    price
+                    title
+                    slug
+                  }
+                }
+              }
+            `,
+            transformer: ({
+              data: {
+                allStrapiProducts: { nodes },
+              },
+            }) => [...nodes].map((node) => {
+              return {
+                id: node.id,
+                price: node.price,
+                name: node.title,
+                url: `/product/${node.slug}`
+              }
+            }),
+          },
+        ],
+      },
+    },
 
   ],
 };
