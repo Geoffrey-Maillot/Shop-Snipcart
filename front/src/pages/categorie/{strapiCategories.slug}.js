@@ -79,17 +79,17 @@ const Product = ({ data }) => {
         <html lang="fr" />
         <meta charSet="utf-8" />
         <title>{data.strapiCategories.name}</title>
-        <meta name="description" content={`Liste produit appartenant à la caégorie ${data.strapiCategories.name}`} />
+        <meta name="description" content={`Liste produit appartenant à la catégorie ${data.strapiCategories.name}`} />
         <JsonLd>
           {{
             '@context': 'https://schema.org',
             '@type': 'Organization',
             url: 'http://www.example.com',
-            name: 'Boutique Gatsby-Snipcart',
+            name: 'My website',
             contactPoint: {
               '@type': 'ContactPoint',
-              telephone: '+33650828740',
-              contactType: 'Patron',
+              telephone: '+1-401-555-1212',
+              contactType: 'Customer service',
             },
           }}
         </JsonLd>

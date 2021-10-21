@@ -27,11 +27,11 @@ const IndexPage = () => {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             url: 'http://www.example.com',
-            name: 'Boutique Gatsby-Snipcart',
+            name: 'My website',
             contactPoint: {
               '@type': 'ContactPoint',
-              telephone: '+33650828740',
-              contactType: 'Patron',
+              telephone: '+1-401-555-1212',
+              contactType: 'Customer service',
             },
           }}
         </JsonLd>
