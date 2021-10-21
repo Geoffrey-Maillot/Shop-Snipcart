@@ -10,6 +10,7 @@ import Header from '../components/Header';
 import Nav from '../components/Nav';
 import Categorie from "../components/Categorie";
 import SortSelect from "../components/SortSelect";
+import JsonLd from '../components/JsonLd'
 
 
 const styles = {
@@ -83,6 +84,19 @@ const Product = ({ data }) => {
         <meta charSet="utf-8" />
         <title>Store</title>
         <meta name="description" content="Liste des produit présent sur le site" />
+        <JsonLd>
+          {{
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            url: 'http://www.example.com',
+            name: 'Boutique Gatsby-Snipcart',
+            contactPoint: {
+              '@type': 'ContactPoint',
+              telephone: '+33650828740',
+              contactType: 'Patron',
+            },
+          }}
+        </JsonLd>
       </Helmet>
       <Header />
       <Nav />

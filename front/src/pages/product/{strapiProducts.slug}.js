@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Helmet } from 'react-helmet'
 
+
 import { graphql } from "gatsby";
 import { getImage, GatsbyImage, getSrc } from 'gatsby-plugin-image';
 
@@ -10,7 +11,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Layout from "../../components/Layout"
 import Header from '../../components/Header';
 import Nav from '../../components/Nav';
-
+import JsonLd from '../../components/JsonLd'
 
 
 // styles
@@ -101,6 +102,19 @@ const Product = ({ data }) => {
         <meta charSet="utf-8" />
         <title>{`${product.title}`}</title>
         <meta name="description" content={`Page du produit ${product.id}`} />
+        <JsonLd>
+          {{
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            url: 'http://www.example.com',
+            name: 'Boutique Gatsby-Snipcart',
+            contactPoint: {
+              '@type': 'ContactPoint',
+              telephone: '+33650828740',
+              contactType: 'Patron',
+            },
+          }}
+        </JsonLd>
       </Helmet>
       <Header />
       <Nav />
