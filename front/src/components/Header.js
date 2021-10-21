@@ -33,19 +33,26 @@ const styles = {
 const Header = () => {
   const [count, setCount] = useState(0)
 
+  /**
+   * Return the quantity of products in cart
+   * @param {array} ProductArray Product in cart
+   * @return {number}
+   */
+  const countQuantity = (productArray) => {
+    return productArray.map((item) => item.quantity).reduce((pre, cur) => pre + cur)
+  }
+
   useEffect(() => {
     // Le SDK de Snipcart fonctinne avec Redux, j'ai donc accès aux méthode store.subscribe() et store.getState() via Snipcart
-
-
     // J'initialise une variable pour stocker mon écouteur au store ce qui me permétra de me déshaboner
     let unsubscribe = null
 
     if (window !== undefined) {
       // Au montage du composant, je récupère le nombre d'item dans le panier
-      setCount(window.Snipcart.store.getState().cart.items.items.length)
+      setCount(countQuantity(window.Snipcart.store.getState().cart.items.items))
       // Je m'abonne au store pour être au courant des que le nombre d'item du panier change
       unsubscribe = window.Snipcart.store.subscribe(() => {
-        setCount(window.Snipcart.store.getState().cart.items.items.length)
+        setCount(countQuantity(window.Snipcart.store.getState().cart.items.items))
       })
     }
     return unsubscribe

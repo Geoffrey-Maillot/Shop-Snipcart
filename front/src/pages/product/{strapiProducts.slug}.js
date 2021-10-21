@@ -77,11 +77,11 @@ const Product = ({ data }) => {
 
   // Gift Option
   const [isGift, setIsGift] = useState(false)
-  const toggleGift = (e) => setIsGift(() => !isGift)
+  const toggleGift = () => setIsGift(() => !isGift)
 
   // Gift Option
   const [isShippable, setIsShippable] = useState(true)
-  const toggleShippable = (e) => setIsShippable(() => !isShippable)
+  const toggleShippable = () => setIsShippable(() => !isShippable)
 
   // Calcul Price to Display
   const priceContenant100ml = 8
@@ -154,7 +154,7 @@ const Product = ({ data }) => {
                 data-item-name={product.title}
                 data-item-image={srcImg}
                 data-item-quantity={quantity}
-                data-item-max-quantity='10'
+                //data-item-max-quantity='10'
                 data-item-custom1-name="Contenance"
                 data-item-custom1-options={`50ml|100ml[+${priceContenant100ml}]`}
                 data-item-custom1-value={contenanceValue}
