@@ -39,6 +39,7 @@ const Header = () => {
    * @return {number}
    */
   const countQuantity = (productArray) => {
+    if (productArray.length === 0) return 0
     return productArray.map((item) => item.quantity).reduce((pre, cur) => pre + cur)
   }
 

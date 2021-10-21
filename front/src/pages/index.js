@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Helmet } from 'react-helmet'
 
 // Import component =>
 import Layout from "../components/Layout"
@@ -15,6 +16,12 @@ const IndexPage = () => {
 
   return (
     <div>
+      <Helmet>
+        <html lang="fr" />
+        <meta charSet="utf-8" />
+        <title>Boutique Gatsby-Snipcart</title>
+        <meta name="description" content="Boutique test Gatsby / Snipcart" />
+      </Helmet>
       <Header />
       <Nav />
       <Layout>

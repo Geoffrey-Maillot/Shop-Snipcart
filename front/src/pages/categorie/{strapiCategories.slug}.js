@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
 // Import Components =>
 import Layout from "../../components/Layout"
@@ -45,7 +46,6 @@ const Product = ({ data }) => {
   // pour éviter cela, je déverse le contenue du state dans un nouveau tableau
   // Une fois le trie effectué, pour repercuté le changement dans le DOM, le remplace le tableau du state avec le nouveau tableau
   const products = [...productsData]
-
   const sortProduct = (e) => {
     const sortValue = e.target.value
     switch (sortValue) {
@@ -75,6 +75,12 @@ const Product = ({ data }) => {
   // Return =>
   return (
     <div>
+      <Helmet>
+        <html lang="fr" />
+        <meta charSet="utf-8" />
+        <title>{data.strapiCategories.name}</title>
+        <meta name="description" content={`Liste produit appartenant à la caégorie ${data.strapiCategories.name}`} />
+      </Helmet>
       <Header />
       <Nav />
       {/* Categorie*/}

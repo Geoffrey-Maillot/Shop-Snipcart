@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
 
 // Import Components =>
@@ -77,6 +78,12 @@ const Product = ({ data }) => {
   // Return =>
   return (
     <div>
+      <Helmet>
+        <html lang="fr" />
+        <meta charSet="utf-8" />
+        <title>Store</title>
+        <meta name="description" content="Liste des produit présent sur le site" />
+      </Helmet>
       <Header />
       <Nav />
       {/* Categorie*/}

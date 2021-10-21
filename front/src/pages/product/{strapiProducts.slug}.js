@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
+import { Helmet } from 'react-helmet'
 
 import { graphql } from "gatsby";
 import { getImage, GatsbyImage, getSrc } from 'gatsby-plugin-image';
@@ -95,6 +96,12 @@ const Product = ({ data }) => {
 
   return (
     <div>
+      <Helmet>
+        <html lang="fr" />
+        <meta charSet="utf-8" />
+        <title>{`${product.title}`}</title>
+        <meta name="description" content={`Page du produit ${product.id}`} />
+      </Helmet>
       <Header />
       <Nav />
       <Layout>
